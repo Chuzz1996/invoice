@@ -10,6 +10,7 @@ class extractInformation:
         Args:
             url: URL to extract the information
         """
+        self.calls = 0
         self.url = url
 
     def getResponse(self,params):
@@ -59,6 +60,7 @@ class extractInformation:
         Return:
             The number of Invoices from a person
         """
+        self.calls += 1
         invoice = self.getResponse(self.buildParams(id,start,finish))
         if not self.isNumeric(invoice):
             middle = self.diveDates(start,finish)
@@ -68,7 +70,14 @@ class extractInformation:
             invoice = self.getNumOfInvoice(id,start,middle)+\
                    self.getNumOfInvoice(id,plusMiddle,finish)
         return invoice
-
+    
+    def getNumOfCalls(self):
+        """
+        Return:
+            The number of calls to Num Invoice
+        """
+        return self.calls
+    
     def buildParams(self,id,start,finish):
         """
         Build the params for a conection

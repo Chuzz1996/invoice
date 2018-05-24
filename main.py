@@ -6,7 +6,7 @@ def main():
     finishDay = "2017-12-31"
     informationInvoice = extractInformation(url)
     numberInvoice = informationInvoice.getNumOfInvoice(id,startDay,finishDay)
-    print("Calculate :",str(numberInvoice),"invoice from",startDay,"to",finishDay)
+    print("Calculate :",str(numberInvoice),"invoice from",startDay,"to",finishDay,"in",str(informationInvoice.getNumOfCalls()),"calls")
 
 
 if __name__=="__main__":
