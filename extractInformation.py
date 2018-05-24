@@ -64,7 +64,7 @@ class extractInformation:
         invoice = self.getResponse(self.buildParams(id,start,finish))
         if not self.isNumeric(invoice):
             middle = self.diveDates(start,finish)
-            plusMiddle = middle - timedelta(days = 1)
+            plusMiddle = middle + timedelta(days = 1)
             middle = self.removeHours(middle)
             plusMiddle = self.removeHours(plusMiddle)
             invoice = self.getNumOfInvoice(id,start,middle)+\
