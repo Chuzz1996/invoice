@@ -70,6 +70,19 @@ class extractInformation:
             invoice = self.getNumOfInvoice(id,start,middle)+\
                    self.getNumOfInvoice(id,plusMiddle,finish)
         return invoice
+
+    def countAndGetCallInvoice(self,id,start,finish):
+        """
+        Start and count of num of invoice call
+        Args:
+            id: The id from a person to check
+            start: The start day
+            finish: The finish day
+        Return:
+            The number of Invoices from a person
+        """
+        self.calls = 0
+        return self.getNumOfInvoice(id,start,finish)
     
     def getNumOfCalls(self):
         """

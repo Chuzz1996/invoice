@@ -5,7 +5,7 @@ def main():
     startDay = "2017-01-01"
     finishDay = "2017-12-31"
     informationInvoice = extractInformation(url)
-    numberInvoice = informationInvoice.getNumOfInvoice(id,startDay,finishDay)
+    numberInvoice = informationInvoice.countAndGetCallInvoice(id,startDay,finishDay)
     print("Calculate :",str(numberInvoice),"invoice from",startDay,"to",finishDay,"in",str(informationInvoice.getNumOfCalls()),"calls")
 
 
